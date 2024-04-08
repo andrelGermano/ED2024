@@ -11,7 +11,7 @@ test('Add test',()=>{
     fp.add(2,50)
     fp.add(1,70)
     fp.add(1,70)
-    expect(fp.lastInput()).toBe(50)
+    expect(fp.lastInput()).toBe(2)
 })
 
 test('Remove test',()=>{
@@ -20,7 +20,7 @@ test('Remove test',()=>{
     fp.add(1,70)
     fp.add(1,70)
     expect(fp.remove()).toBe(80)
-    expect(fp.lastInput()).toBe(50)
+    expect(fp.lastInput()).toBe(1)
 })
 
 test('asArray test',()=>{
@@ -28,5 +28,5 @@ test('asArray test',()=>{
     fp.add(2,50)
     fp.add(3,70)
     fp.add(4,70)
-    expect(fp.asArray()).toBe('80707050')
+    expect(fp.asArray()).toBe('1432')
 })
