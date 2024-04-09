@@ -56,10 +56,7 @@ class FilaCircular {
      * @return {any} - Elemento na primeira posição da fila
      */
     front() {
-        if (this.inicio < this.capacidade)
-            return this.dados[this.inicio]; // Retorna o elemento no início da fila
-        else
-            return this.dados[0]; // Retorna o elemento no início da fila (fila circular)
+          return this.dados[this.inicio];
     }
 
     /**
