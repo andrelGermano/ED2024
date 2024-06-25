@@ -27,7 +27,7 @@ class Fila {
             this.dados[this.fim++] = dado; // Adiciona o dado ao final da fila e incrementa o índice do fim
             return;
         }
-        throw new Error("Queueoverflow"); // Lança um erro caso a fila esteja cheia
+        throw new Error("Queue wwwoverflow"); // Lança um erro caso a fila esteja cheia
     }
 
     /**
