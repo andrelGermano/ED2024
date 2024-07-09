@@ -13,13 +13,6 @@ class FilaPrioridade {
 		this.tree[0] = new Node(0, 99999999);
 	}
 
-	/*
-	Incremente o valor de size;
-	Dados[size] recebe o valor inserido;
-	Compare a prioridade desse novo nó com seu pai.
-	Se a prioridade do pai for menor que filho, coloque o pai na posição do filho.
-	Repita as etapas 3 e 4 até que a prioridade do pai seja maior ou igual ao filho.	*/
-
 	add(dado, prioridade) {
 		let novo_no = new Node(dado, prioridade);
 		this.tree[++this.size] = novo_no;
@@ -39,13 +32,6 @@ class FilaPrioridade {
 		this.tree[pos_filho] = node;
 	}
 
-	/*
-	Remover o nó raiz.
-	Mover o último elemento do último nível para a raiz.
-	Comparar o valor desse pai com seu filho.
-	Se o valor do pai for menor que filho, troque-os.
-	Repita as etapas 3 e 4 até que a prioridade do pai seja maior ou igual ao filho.
-	*/
 	remove() {
 		let elemento_maior_prioridade = this.tree[1];
 		let ultimo = this.tree[this.size];
@@ -70,11 +56,6 @@ class FilaPrioridade {
 		return elemento_maior_prioridade;
 	}
 
-	/**
-	 * Caminha pelo Array Tree
-	 * Incrementa a variável convert com os dados de cadad index
-	 * Retorna convert
-	 */
 	asArray() {
 		if(this.isEmpty()) return ''
 

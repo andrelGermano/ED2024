@@ -1,41 +1,19 @@
 import No from "./No"; // Importa a classe No do arquivo No.js
-
-/**
- * Classe representando uma lista simplesmente ligada.
- * Nas listas, a ordem é determinada por um 
-ponteiro em cada objeto.
- */
-
 class Lista {
-    /**
-     * Cria uma lista encadeada vazia.
-     * @constructor
-     */
+
     constructor() {
         this.head = new No(); // Cria um nó vazio que representa o início da lista
         this.size = 0; // Inicializa o tamanho da lista como zero
     }
 
-    /**
-     * Retorna o tamanho atual da lista.
-     * @returns {number} O tamanho da lista.
-     */
     length() {
         return this.size; 
     }
 
-    /**
-     * Verifica se a lista está vazia.
-     * @returns {boolean} Verdadeiro se a lista estiver vazia, falso caso contrário.
-     */
     isEmpty() {
         return this.head.proximo === null;  // Verifica se não há nenhum próximo nó após o head. 
     }
 
-    /**
-     * Adiciona um novo elemento no início da lista.
-     * @param {*} dado - O dado a ser adicionado à lista.
-     */
     add(dado) {
         let novo_no = new No(dado); // Cria um novo nó com o dado fornecido
 
@@ -44,10 +22,6 @@ class Lista {
         this.size++; // Incrementa o tamanho da lista
     }
 
-    /**
-     * Adiciona um novo elemento no final da lista.
-     * @param {*} dado - O dado a ser adicionado à lista.
-     */
     append(dado) {
         let novo_no = new No(dado); // Cria um novo nó com o dado fornecido
         let aux = this.head; // Define um nó auxiliar para percorrer a lista
@@ -60,11 +34,6 @@ class Lista {
         this.size++; // Incrementa o tamanho da lista
     }
 
-    
-    /**
-     * Remove o primeiro elemento da lista.
-     * @throws {Error} Se a lista estiver vazia.
-     */
     remove() {
         if (!this.isEmpty()) { // Verifica se a lista não está vazia
             let aux = this.head.proximo; // Obtém o primeiro elemento da lista
@@ -75,10 +44,6 @@ class Lista {
         throw new Error("Underflow"); // Lança um erro de "Underflow" se a lista estiver vazia
     }
 
-     /**
-     * Remove o último elemento da lista.
-     * @throws {Error} Se a lista estiver vazia.
-     */
     removeLast() {
         if (!this.isEmpty()) { // Verifica se a lista não está vazia
             let node_a = this.head; // Define um nó inicial para percorrer a lista
@@ -96,13 +61,6 @@ class Lista {
         throw new Error("Underflow"); // Lança um erro de "Underflow" se a lista estiver vazia
     }
 
-     /**
-
-    * Adiciona um novo elemento em uma posição específica na lista.
-    * @param {*} dado - O dado a ser adicionado à lista.
-    * @param {number} pos - A posição na lista onde o dado será inserido.
-    * @throws {Error} Se a posição especificada for inválida ou se a lista estiver vazia.
-    */
     addAt(dado, pos) { // Lista começa na posição 1 (Ignora a head)
         if (pos <= this.length() && pos >= 1) { // Verifica se a posição é válida
             let novoNo = new No(dado); // Cria um novo nó com o dado fornecido
@@ -125,11 +83,6 @@ class Lista {
         }
     }
 
-    /**
-     * Remove o elemento de uma posição específica na lista.
-     * @param {number} pos - A posição do elemento a ser removido na lista.
-     * @throws {Error} Se a posição especificada for inválida ou se a lista estiver vazia.
-     */
     removeAt(pos) {
         if (!this.isEmpty()) { // Verifica se a lista não está vazia
             if (pos <= this.length() && pos >= 1) { // Verifica se a posição é válida
@@ -154,12 +107,6 @@ class Lista {
         }
     }
 
-    /**
-     * Procura por um dado na lista e retorna true se encontrado, false caso contrário.
-     * @param {*} dado - O dado a ser procurado na lista.
-     * @returns {boolean} Verdadeiro se o dado for encontrado na lista, falso caso contrário.
-     * @throws {Error} Se a lista estiver vazia.
-     */
     search(dado) {
         if (!this.isEmpty()) { // Verifica se a lista não está vazia
             let aux = this.head; // Define um nó auxiliar para percorrer a lista
@@ -175,12 +122,6 @@ class Lista {
         return false; // Retorna falso se o dado não for encontrado na lista
     }
 
-    /**
-     * Procura por um dado na lista e retorna seu índice se encontrado.
-     * @param {*} dado - O dado a ser procurado na lista.
-     * @returns {number} O índice do dado na lista, ou -1 se não encontrado.
-     * @throws {Error} Se a lista estiver vazia ou se a posição especificada for inválida.
-     */
     searchIndex(pos) {
         if (!this.isEmpty()) { // Verifica se a lista não está vazia
             let aux = this.head.proximo; // Define um nó auxiliar para percorrer a lista, começando do segundo nó
@@ -198,11 +139,6 @@ class Lista {
         }
     }
 
-    /**
-     * Método para limpar a lista, removendo todos os elementos.
-     * @return {void}
-     * @throws {Error} - Se a lista estiver vazia.
-     */
     clear() {
         // Verifica se a lista não está vazia antes de tentar limpar
         if (!this.isEmpty()) {
@@ -225,11 +161,6 @@ class Lista {
         throw new Error("Empty list");
     }
 
-
-    /**
-     * Retorna os elementos da lista como um array.
-     * @returns {Array} Um array contendo os elementos da lista.
-     */
     asArray() {
         let resultado = []; // Inicializa um array para armazenar os elementos da lista
         let aux = this.head.proximo; // Define um nó auxiliar para percorrer a lista, começando do segundo nó

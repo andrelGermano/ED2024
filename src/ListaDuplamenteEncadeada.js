@@ -1,15 +1,5 @@
-/**
- * Implementação de uma Lista Duplamente Ligada
- * @author {https://github.com/taniro}
- */
-
-
 class Node {
-    /**
-     * Construtor do Nó que será usado para implementar uma Lista Duplamente Ligada
-     * @param {any} [dado]  - Novo elemento que será inserido no Nó
-     * Os nós apontam para 2 direções: O proximo nó e o anterior
-     */
+
     constructor(dado) {
         this.dado = dado;
         this.anterior = null;
@@ -19,20 +9,11 @@ class Node {
 
 class ListaDuplamenteLigada {
 
-    /**
-     * Construtor de uma Lista Duplamente Ligada
-     * Definindo quem é a cabeça[head] e quem é a cauda[tail] para implementar a recursividade na Lista
-     */
     constructor() {
         this.head = null;
         this.tail = null;
     }
 
-    /**
-     * Insere um Novo Nó no inicio da Lista
-     * @param {any} [dado] - Novo nó que está sendo inserindo na Lista 
-     * Caso a Lista esteja vazia, o primeiro nó a ser inserido será a cabeça e a cauda ao mesmo tempo
-     */
     add(dado) {
         let novo_no = new Node(dado);
         if (this.isEmpty()) {
@@ -49,11 +30,6 @@ class ListaDuplamenteLigada {
         }
     }
 
-    /**
-     * Insere um Novo Nó no final da Lista
-     * @param {any} [dado] - Novo nó que está sendo inserindo no final da Lista
-     * Caso a Lista esteja vazia, o primeiro nó a ser inserido será a cabeça e a cauda ao mesmo tempo
-     */
     append(dado) {
         let novo_no = new Node(dado);
         if (this.isEmpty()) {
@@ -69,10 +45,6 @@ class ListaDuplamenteLigada {
         }
     }
 
-    /**
-     * Remove o Nó que se encontra no começo da Lista.
-     * 
-     */
     removeFirst() {
         if (!this.isEmpty()) {
             if (this.length() === 1) {
@@ -88,11 +60,6 @@ class ListaDuplamenteLigada {
         }
     }
 
-    /**
-     * Remove um Nó específico da Lista
-     * @param {any} [dado] - Nó que será removido
-     * @returns {boolean} - Retorna true se o Nó foi removido, e false se ele não foi removido
-     */
     remove(dado) {
         if (!this.isEmpty()) {
             let current = this.head;
@@ -124,10 +91,6 @@ class ListaDuplamenteLigada {
         return false;
     }
 
-    /**
-     * Remove o Nó que está no final da Lista
-     * 
-     */
     removeLast() {
         if (!this.isEmpty()) {
             if (this.length() === 1) {
@@ -143,18 +106,10 @@ class ListaDuplamenteLigada {
         }
     }
 
-    /**
-     * Verifica se a Lista está fazia ou não
-     * @returns {boolean} - Retorna [true] se a fila estiver vazia e [false] caso ela não esteja
-     */
     isEmpty() {
         return this.head === null;
     }
 
-    /**
-     * Formatação da Lista em String
-     * @returns {string} - Lista retornada em formato de string
-     */
     toString() {
         let tmp = this.head;
         let texto = "";
@@ -167,10 +122,6 @@ class ListaDuplamenteLigada {
         return texto;
     }
 
-    /**
-     * Retorna o tamanho da Lista
-     * @returns {number} - Tamanho da Lista
-     */
     length() {
         let cont = 0;
         let tmp = this.head;
@@ -182,11 +133,6 @@ class ListaDuplamenteLigada {
         return cont;
     }
 
-    /**
-     * Insere um Novo Nó em um local específico da Lista
-     * @param {number} [posicao] - O índicie que o novo nó será inserido 
-     * @param {any} [dado] - Novo Nó a ser inserido na Lista 
-     */
     addAt(posicao, dado) {
         if (posicao >= this.length()) {
             //adicionando no final
@@ -216,10 +162,6 @@ class ListaDuplamenteLigada {
         }
     }
 
-    /**
-     * Formatação da Lista em um Array
-     * @returns {any} - Lista em formato de array
-     */
     asArray() {
         let current = this.head;
         let dados = [];
@@ -232,11 +174,6 @@ class ListaDuplamenteLigada {
         return dados;
     }
 
-    /**
-     * Procura um Dado específico na Lista
-     * @param {any} [dado] - Dado que será procurado na Lista
-     * @returns {boolean} - Retorna [true] caso o dado tenha sido encontrado e [false] se ele não existir
-     */
     search(dado) {
         if (this.isEmpty()) {
             return false;
