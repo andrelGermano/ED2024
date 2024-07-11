@@ -1,4 +1,3 @@
-// src/sort/BubbleSort.js
 export function BubbleSort(list) {
     if (list.length === 0) {
         throw new Error("Empty list");
@@ -17,3 +16,6 @@ export function BubbleSort(list) {
     } while (swapped);
     return list;
 }
+// export function BubbleSort(list){
+
+// }
