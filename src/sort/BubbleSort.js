@@ -6,7 +6,7 @@ export function BubbleSort(lista){
     do{
         trocado = false;
         for(let i=0; i<lista.length-1; i++){
-            if(lista[i] > lista[i=1]){
+            if(lista[i] > lista[i+1]){
                 let aux = lista[i];
                 lista[i] = lista[i+1];
                 lista[i+1] = aux;
